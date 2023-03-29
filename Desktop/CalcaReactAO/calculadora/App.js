@@ -9,6 +9,7 @@ import {
   Dimensions,
   Button,
   ScrollView,
+  ToastAndroid,
 } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 
@@ -35,8 +36,12 @@ export default function App() {
   function contar() {
     setContador(contador + 1);
   }
+
   function operadores(operadorRecebido) {
-    if (contador <= 16) {
+    if (contador >= 16) {
+      ToastAndroid.show('limite atingido', ToastAndroid.SHORT);
+      operadorExistente ? setContador(0) : setContador(0);
+    }else{
       switch (operadorRecebido) {
         case "0":
           numeroExistente
