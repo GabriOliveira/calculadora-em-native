@@ -9,7 +9,6 @@ import {
   Dimensions,
   Button,
   ScrollView,
-  ToastAndroid,
 } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 
@@ -36,12 +35,8 @@ export default function App() {
   function contar() {
     setContador(contador + 1);
   }
-
   function operadores(operadorRecebido) {
-    if (contador >= 16) {
-      ToastAndroid.show('limite atingido', ToastAndroid.SHORT);
-      operadorExistente ? setContador(0) : setContador(0);
-    }else{
+    if (contador <= 16) {
       switch (operadorRecebido) {
         case "0":
           numeroExistente
@@ -215,22 +210,22 @@ export default function App() {
     },
 
     operadorestilo: {
-      height: '25%',
-      width: '25%',
-      padding: '1%',
+      height: 100,
+      width: 100,
+      padding: 6,
       borderRadius: 50,
       textAlign: "center",
       flexDirection: "row",
       justifyContent: "center",
       alignItems: "center",
       backgroundColor: "#aafac8",
-      
+      color : 'red',
     },
 
     corpo: {
-      height: '25%',
+      height: '20%',
       width: '25%',
-      padding: '1%',
+      padding: 25,
       borderRadius: 50,
       textAlign: "center",
       flexDirection: "row",
@@ -265,9 +260,9 @@ export default function App() {
       flexDirection: "row",
       flexWrap: 'wrap',
       width: 200,
-      height : '115%',
       alignItems: "center",
       justifyContent: "space-around",
+      marginTop : 12,
       
     },
 
@@ -277,10 +272,9 @@ export default function App() {
       bottom: 90,
       alignItems: "center",
       justifyContent: "center",
-      width: '20%',
-      height: '20%',
+      width: 50,
+      height: 50,
       borderRadius: 25,
-      marginTop : '1%',
     },
     seguradora: {},
   });
