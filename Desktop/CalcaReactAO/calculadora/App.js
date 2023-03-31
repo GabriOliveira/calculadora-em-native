@@ -302,7 +302,7 @@ export default function App() {
           {" "}
           {numero1}
           {operador}
-          {numero2} ={" "}
+          {numero2} {" "}
         </Text>
         <Text style={styles.resultadoTexto}> {resultado}</Text>
       </View>
